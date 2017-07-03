@@ -4,7 +4,7 @@ from sklearn import svm, metrics
 csv = np.genfromtxt ('Train.csv', delimiter=",")
 csv =  np.delete(csv,0,0) #delete header row
 csv =  np.delete(csv,0,1) #delete id column
-np.random.shuffle(csv)
+#np.random.shuffle(csv)
 labels = csv[:,256] #labels
 csv =  np.delete(csv,256,axis=1) #delete labels column
 print(csv.shape)
@@ -14,7 +14,7 @@ print(sum(labels))
 print(np.unique(labels))
 
 n_samples = len(csv)
-classifier = svm.SVC(gamma=0.001)
+classifier = svm.SVC(gamma=0.001,class_weight='balanced')
 classifier.fit(csv[:n_samples // 2], labels[:n_samples // 2])
 expected = labels[n_samples // 2:]
 predicted = classifier.predict(csv[n_samples // 2:])
@@ -39,3 +39,4 @@ print("Confusion matrix:\n%s" % metrics.confusion_matrix(expected, predicted))
 # Confusion matrix:
 # [[ 682 1654]
 #  [  30 9380]]
+

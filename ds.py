@@ -40,3 +40,19 @@ print("Confusion matrix:\n%s" % metrics.confusion_matrix(expected, predicted))
 # [[ 682 1654]
 #  [  30 9380]]
 
+# fe629c6
+# Classification report for classifier SVC(C=1.0, cache_size=200, class_weight='balanced', coef0=0.0,
+#   decision_function_shape=None, degree=3, gamma=0.001, kernel='rbf',
+#   max_iter=-1, probability=False, random_state=None, shrinking=True,
+#   tol=0.001, verbose=False):
+#              precision    recall  f1-score   support
+#
+#         0.0       0.84      0.80      0.82      2336
+#         1.0       0.95      0.96      0.96      9410
+#
+# avg / total       0.93      0.93      0.93     11746
+#
+#
+# Confusion matrix:
+# [[1877  459]
+#  [ 349 9061]]

@@ -1,6 +1,8 @@
 import numpy as np
 import time
 from time import gmtime, strftime
+
+import sys
 from sklearn import svm, metrics
 from sklearn.metrics import accuracy_score
 from sklearn import preprocessing
@@ -16,7 +18,36 @@ def load_data(filename):
 def gt():
     return strftime("%Y-%m-%d %H:%M:%S ", gmtime())
 
-print(gt()+"data load start")
+def flog(msg):
+    msg = str(msg)
+    print(msg)
+    f = open('res.txt', 'a')
+    f.write(msg)  # python will convert \n to os.linesep
+    f.close()  # you can omit in most cases as the destructor will call it
+
+def run(tdata,tlabels,vdata,vlables,g,c,b):
+    flog(gt()+"fit start")
+    if(b<1):
+        cw = 'balanced'
+    else:
+        cw = {0: b}
+    classifier = svm.SVC(gamma=g,C=c, kernel='rbf',class_weight=cw) #higher C => Overfitting
+    classifier.fit(tdata, tlabels)
+    flog(gt()+"fit complete")
+
+    expected = vlabels
+    predicted = classifier.predict(vdata)
+
+    flog(gt()+"Classification report for classifier %s:\n%s\n"
+          % (classifier, metrics.classification_report(expected, predicted)))
+    cm = metrics.confusion_matrix(expected, predicted)
+    accuracy = (cm[0,0]+cm[1,1])*100.0/sum(sum(cm))
+    flog(accuracy)
+    flog(gt()+"Confusion matrix:\n%s" % cm)
+    sys.stdout.flush()
+    return accuracy
+
+flog(gt()+"data load start")
 tdata, tlabels = load_data('Train.csv')
 scaler = preprocessing.StandardScaler().fit(tdata)
 scaler.transform(tdata)
@@ -24,27 +55,31 @@ scaler.transform(tdata)
 vdata, vlabels = load_data('Validate.csv')
 scaler.transform(vdata)
 
-print(gt()+"data load end")
+flog(gt()+"data load end")
 
-print(tdata.shape)
-print(sum(tlabels))
-print(vdata.shape)
-print(sum(vlabels))
+flog(tdata.shape)
+flog(sum(tlabels))
+flog(vdata.shape)
+flog(sum(vlabels))
+
+accuracy = 0
+best_g = 0
+best_c = 0
+best_b = 0
+for g in np.arange(0.0001, 0.001, 0.0001):
+    for c in np.arange(1.0, 10.0, 0.5):
+        for b in np.arange(0.0, 5.0, 1.0):
+            curr = run(tdata,tlabels,vdata,vlabels,g,c,b)
+            if(curr > accuracy):
+                accuracy = curr
+                best_g = g
+                best_c = c
+                best_b = b
+                flog("best so far "+str(accuracy)+" for "+str(g)+" and "+str(c)+" and "+str(b))
+            flog("best so far "+str(accuracy)+" for "+str(best_g)+" and "+str(best_c)+" and "+str(best_b))
 
 #np.random.shuffle(tdata)
 #print("shuffled")
-
-print(gt()+"fit start")
-classifier = svm.SVC(gamma=0.001,C=1.0, kernel='rbf',class_weight='balanced') #higher C => Overfitting
-classifier.fit(tdata, tlabels)
-print(gt()+"fit complete")
-
-expected = vlabels
-predicted = classifier.predict(vdata)
-
-print(gt()+"Classification report for classifier %s:\n%s\n"
-      % (classifier, metrics.classification_report(expected, predicted)))
-print(gt()+"Confusion matrix:\n%s" % metrics.confusion_matrix(expected, predicted))
 
 
 # With PP, with class_balanced, proper scaling

@@ -22,10 +22,10 @@ def flog(msg):
     msg = str(msg)
     print(msg)
     f = open('res.txt', 'a')
-    f.write(msg)  # python will convert \n to os.linesep
+    f.write(msg+"\n")  # python will convert \n to os.linesep
     f.close()  # you can omit in most cases as the destructor will call it
 
-def run(tdata,tlabels,vdata,vlables,g,c,b):
+def run(tdata,tlabels,vdata,vlabels,g,c,b):
     flog(gt()+"fit start")
     if(b<1):
         cw = 'balanced'
@@ -66,7 +66,7 @@ accuracy = 0
 best_g = 0
 best_c = 0
 best_b = 0
-for g in np.arange(0.0001, 0.0005, 0.0001):
+for g in np.arange(0.0001, 0.005, 0.0001):
     for c in np.arange(1.0, 5.0, 1.0):
         for b in np.arange(0.0, 4.0, 1.0):
             curr = run(tdata,tlabels,vdata,vlabels,g,c,b)

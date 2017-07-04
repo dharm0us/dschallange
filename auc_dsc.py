@@ -60,10 +60,10 @@ def run(tdata,tlabels,vdata,vlabels,g,c,b):
     # vdata = np.c_[vdata, random_state.randn(vn_samples, 200 * vn_features)]
 
     # Learn to predict each class against the other
-    print("creating classifier")
+    flog("creating classifier")
     #classifier = OneVsRestClassifier(svm.SVC(kernel='rbf', probability=True, random_state=random_state))
     classifier = svm.SVC(kernel='rbf', probability=True, random_state=random_state,gamma=g,C=c,class_weight=cw)
-    print("scoring")
+    flog("scoring")
     y_score = classifier.fit(tdata, tlabels).predict_proba(vdata)
     print y_score
 
@@ -76,10 +76,11 @@ def run(tdata,tlabels,vdata,vlabels,g,c,b):
     print y_score[:,0].shape
     fpr, tpr, _ = roc_curve(vlabels, y_score[:,0])
     roc_auc_1 = auc(fpr, tpr)
-    print roc_auc_1
+    flog(roc_auc_1)
     fpr, tpr, _ = roc_curve(vlabels, y_score[:,1])
     roc_auc_2 = auc(fpr, tpr)
-    print roc_auc_2
+    flog(roc_auc_2)
+    flog(gt()+"Classification report for classifier %s:\n" % (classifier))
     return max(roc_auc_1,roc_auc_2)
 
     # Compute micro-average ROC curve and ROC area
@@ -93,9 +94,6 @@ def run(tdata,tlabels,vdata,vlabels,g,c,b):
     # expected = vlabels
     # predicted = classifier.predict(vdata)
     #
-    # flog(gt()+"Classification report for classifier %s:\n%s\n"
-    #      % (classifier, metrics.classification_report(expected, predicted)))
-    # cm = metrics.confusion_matrix(expected, predicted)
     # accuracy = (cm[0,0]+cm[1,1])*100.0/sum(sum(cm))
     # flog(accuracy)
     # flog(gt()+"Confusion matrix:\n%s" % cm)

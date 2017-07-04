@@ -50,10 +50,10 @@ def run(tdata,tlabels,vdata,vlabels,g,c,b):
 flog(gt()+"data load start")
 tdata, tlabels = load_data('Train.csv')
 scaler = preprocessing.StandardScaler().fit(tdata)
-scaler.transform(tdata)
+tdata = scaler.transform(tdata)
 
 vdata, vlabels = load_data('Validate.csv')
-scaler.transform(vdata)
+vdata = scaler.transform(vdata)
 
 flog(gt()+"data load end")
 
@@ -66,9 +66,10 @@ accuracy = 0
 best_g = 0
 best_c = 0
 best_b = 0
-for g in np.arange(0.0001, 0.005, 0.0001):
+for g in np.arange(0.001, 0.005, 0.001):
     for c in np.arange(1.0, 5.0, 1.0):
-        for b in np.arange(0.0, 4.0, 1.0):
+        #for b in np.arange(0.0, 4.0, 1.0):
+            b = 0.0
             curr = run(tdata,tlabels,vdata,vlabels,g,c,b)
             if(curr > accuracy):
                 accuracy = curr

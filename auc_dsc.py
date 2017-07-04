@@ -9,6 +9,11 @@ from sklearn import preprocessing
 from sklearn.multiclass import OneVsRestClassifier
 from sklearn.preprocessing import label_binarize
 
+# g = 0.0002
+# c = 1.0
+# b = 'balanced'
+# 0.041416041514
+# 0.958583958486
 
 def load_data(filename):
     data = np.genfromtxt (filename, delimiter=",")
@@ -24,14 +29,14 @@ def gt():
 def flog(msg):
     msg = str(msg)
     print(msg)
-    f = open('res.txt', 'a')
+    f = open('res_auc.txt', 'a')
     f.write(msg+"\n")  # python will convert \n to os.linesep
     f.close()  # you can omit in most cases as the destructor will call it
 
 def run(tdata,tlabels,vdata,vlabels,g,c,b):
-    g = 0.0002
-    c = 1.0
-    b = 'balanced'
+    # g = 0.0002
+    # c = 1.0
+    # b = 'balanced'
     flog(gt()+"fit start")
     if(b<1):
         cw = 'balanced'
@@ -57,7 +62,7 @@ def run(tdata,tlabels,vdata,vlabels,g,c,b):
     # Learn to predict each class against the other
     print("creating classifier")
     #classifier = OneVsRestClassifier(svm.SVC(kernel='rbf', probability=True, random_state=random_state))
-    classifier = svm.SVC(kernel='rbf', probability=True, random_state=random_state,gamma=g,C=c,class_weight=b)
+    classifier = svm.SVC(kernel='rbf', probability=True, random_state=random_state,gamma=g,C=c,class_weight=cw)
     print("scoring")
     y_score = classifier.fit(tdata, tlabels).predict_proba(vdata)
     print y_score
@@ -70,11 +75,12 @@ def run(tdata,tlabels,vdata,vlabels,g,c,b):
     print y_score.shape
     print y_score[:,0].shape
     fpr, tpr, _ = roc_curve(vlabels, y_score[:,0])
-    roc_auc = auc(fpr, tpr)
-    print roc_auc
+    roc_auc_1 = auc(fpr, tpr)
+    print roc_auc_1
     fpr, tpr, _ = roc_curve(vlabels, y_score[:,1])
-    roc_auc = auc(fpr, tpr)
-    print roc_auc
+    roc_auc_2 = auc(fpr, tpr)
+    print roc_auc_2
+    return max(roc_auc_1,roc_auc_2)
 
     # Compute micro-average ROC curve and ROC area
     # fpr["micro"], tpr["micro"], _ = roc_curve(vlabels.ravel(), y_score.ravel())
@@ -111,7 +117,7 @@ flog(sum(tlabels))
 flog(vdata.shape)
 flog(sum(vlabels))
 
-accuracy = 0
+auc_val = 0
 best_g = 0
 best_c = 0
 best_b = 0
@@ -119,11 +125,10 @@ for g in np.arange(0.0001, 0.0005, 0.0001):
     for c in np.arange(1.0, 5.0, 1.0):
         for b in np.arange(0.0, 4.0, 1.0):
             curr = run(tdata,tlabels,vdata,vlabels,g,c,b)
-            if(curr > accuracy):
-                accuracy = curr
+            if(curr > auc_val):
+                auc_val = curr
                 best_g = g
                 best_c = c
                 best_b = b
-                flog("best so far "+str(accuracy)+" for "+str(g)+" and "+str(c)+" and "+str(b))
-            flog("best so far "+str(accuracy)+" for "+str(best_g)+" and "+str(best_c)+" and "+str(best_b))
-            exit(1)
+                flog("best so far "+str(auc_val)+" for "+str(g)+" and "+str(c)+" and "+str(b))
+            flog("best so far "+str(auc_val)+" for "+str(best_g)+" and "+str(best_c)+" and "+str(best_b))

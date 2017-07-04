@@ -1,0 +1,353 @@
+2017-07-04 08:54:25 data load start
+2017-07-04 08:54:32 data load end
+(23491L, 256L)
+18792.0
+(4567L, 256L)
+2686.0
+2017-07-04 08:54:32 fit start
+2017-07-04 08:55:34 fit complete
+2017-07-04 08:55:41 Classification report for classifier SVC(C=1.0, cache_size=200, class_weight='balanced', coef0=0.0,
+  decision_function_shape=None, degree=3, gamma=0.0001, kernel='rbf',
+  max_iter=-1, probability=False, random_state=None, shrinking=True,
+  tol=0.001, verbose=False):
+             precision    recall  f1-score   support
+
+        0.0       0.93      0.87      0.90      1881
+        1.0       0.92      0.96      0.94      2686
+
+avg / total       0.92      0.92      0.92      4567
+
+
+92.2049485439
+2017-07-04 08:55:41 Confusion matrix:
+[[1643  238]
+ [ 118 2568]]
+best so far 92.2049485439 for 0.0001 and 1.0 and 0.0
+best so far 92.2049485439 for 0.0001 and 1.0 and 0.0
+2017-07-04 08:55:41 fit start
+2017-07-04 08:56:43 fit complete
+2017-07-04 08:56:50 Classification report for classifier SVC(C=1.0, cache_size=200, class_weight='balanced', coef0=0.0,
+  decision_function_shape=None, degree=3, gamma=0.0001, kernel='rbf',
+  max_iter=-1, probability=False, random_state=None, shrinking=True,
+  tol=0.001, verbose=False):
+             precision    recall  f1-score   support
+
+        0.0       0.93      0.87      0.90      1881
+        1.0       0.92      0.96      0.94      2686
+
+avg / total       0.92      0.92      0.92      4567
+
+
+92.2049485439
+2017-07-04 08:56:50 Confusion matrix:
+[[1643  238]
+ [ 118 2568]]
+best so far 92.2049485439 for 0.0001 and 1.0 and 0.0
+2017-07-04 08:56:50 fit start
+2017-07-04 08:57:53 fit complete
+2017-07-04 08:58:00 Classification report for classifier SVC(C=1.0, cache_size=200, class_weight='balanced', coef0=0.0,
+  decision_function_shape=None, degree=3, gamma=0.0001, kernel='rbf',
+  max_iter=-1, probability=False, random_state=None, shrinking=True,
+  tol=0.001, verbose=False):
+             precision    recall  f1-score   support
+
+        0.0       0.93      0.87      0.90      1881
+        1.0       0.92      0.96      0.94      2686
+
+avg / total       0.92      0.92      0.92      4567
+
+
+92.2049485439
+2017-07-04 08:58:00 Confusion matrix:
+[[1643  238]
+ [ 118 2568]]
+best so far 92.2049485439 for 0.0001 and 1.0 and 0.0
+2017-07-04 08:58:00 fit start
+2017-07-04 08:59:02 fit complete
+2017-07-04 08:59:09 Classification report for classifier SVC(C=1.0, cache_size=200, class_weight='balanced', coef0=0.0,
+  decision_function_shape=None, degree=3, gamma=0.0001, kernel='rbf',
+  max_iter=-1, probability=False, random_state=None, shrinking=True,
+  tol=0.001, verbose=False):
+             precision    recall  f1-score   support
+
+        0.0       0.93      0.87      0.90      1881
+        1.0       0.92      0.96      0.94      2686
+
+avg / total       0.92      0.92      0.92      4567
+
+
+92.2049485439
+2017-07-04 08:59:09 Confusion matrix:
+[[1643  238]
+ [ 118 2568]]
+best so far 92.2049485439 for 0.0001 and 1.0 and 0.0
+2017-07-04 08:59:09 fit start
+2017-07-04 09:00:08 fit complete
+2017-07-04 09:00:15 Classification report for classifier SVC(C=2.0, cache_size=200, class_weight='balanced', coef0=0.0,
+  decision_function_shape=None, degree=3, gamma=0.0001, kernel='rbf',
+  max_iter=-1, probability=False, random_state=None, shrinking=True,
+  tol=0.001, verbose=False):
+             precision    recall  f1-score   support
+
+        0.0       0.93      0.88      0.90      1881
+        1.0       0.92      0.95      0.94      2686
+
+avg / total       0.92      0.92      0.92      4567
+
+
+92.2487409678
+2017-07-04 09:00:15 Confusion matrix:
+[[1654  227]
+ [ 127 2559]]
+best so far 92.2487409678 for 0.0001 and 2.0 and 0.0
+best so far 92.2487409678 for 0.0001 and 2.0 and 0.0
+2017-07-04 09:00:15 fit start
+2017-07-04 09:01:14 fit complete
+2017-07-04 09:01:20 Classification report for classifier SVC(C=2.0, cache_size=200, class_weight='balanced', coef0=0.0,
+  decision_function_shape=None, degree=3, gamma=0.0001, kernel='rbf',
+  max_iter=-1, probability=False, random_state=None, shrinking=True,
+  tol=0.001, verbose=False):
+             precision    recall  f1-score   support
+
+        0.0       0.93      0.88      0.90      1881
+        1.0       0.92      0.95      0.94      2686
+
+avg / total       0.92      0.92      0.92      4567
+
+
+92.2487409678
+2017-07-04 09:01:20 Confusion matrix:
+[[1654  227]
+ [ 127 2559]]
+best so far 92.2487409678 for 0.0001 and 2.0 and 0.0
+2017-07-04 09:01:20 fit start
+2017-07-04 09:02:19 fit complete
+2017-07-04 09:02:25 Classification report for classifier SVC(C=2.0, cache_size=200, class_weight='balanced', coef0=0.0,
+  decision_function_shape=None, degree=3, gamma=0.0001, kernel='rbf',
+  max_iter=-1, probability=False, random_state=None, shrinking=True,
+  tol=0.001, verbose=False):
+             precision    recall  f1-score   support
+
+        0.0       0.93      0.88      0.90      1881
+        1.0       0.92      0.95      0.94      2686
+
+avg / total       0.92      0.92      0.92      4567
+
+
+92.2487409678
+2017-07-04 09:02:25 Confusion matrix:
+[[1654  227]
+ [ 127 2559]]
+best so far 92.2487409678 for 0.0001 and 2.0 and 0.0
+2017-07-04 09:02:25 fit start
+2017-07-04 09:03:23 fit complete
+2017-07-04 09:03:30 Classification report for classifier SVC(C=2.0, cache_size=200, class_weight='balanced', coef0=0.0,
+  decision_function_shape=None, degree=3, gamma=0.0001, kernel='rbf',
+  max_iter=-1, probability=False, random_state=None, shrinking=True,
+  tol=0.001, verbose=False):
+             precision    recall  f1-score   support
+
+        0.0       0.93      0.88      0.90      1881
+        1.0       0.92      0.95      0.94      2686
+
+avg / total       0.92      0.92      0.92      4567
+
+
+92.2487409678
+2017-07-04 09:03:30 Confusion matrix:
+[[1654  227]
+ [ 127 2559]]
+best so far 92.2487409678 for 0.0001 and 2.0 and 0.0
+2017-07-04 09:03:30 fit start
+2017-07-04 09:04:26 fit complete
+2017-07-04 09:04:32 Classification report for classifier SVC(C=3.0, cache_size=200, class_weight='balanced', coef0=0.0,
+  decision_function_shape=None, degree=3, gamma=0.0001, kernel='rbf',
+  max_iter=-1, probability=False, random_state=None, shrinking=True,
+  tol=0.001, verbose=False):
+             precision    recall  f1-score   support
+
+        0.0       0.93      0.88      0.90      1881
+        1.0       0.92      0.95      0.94      2686
+
+avg / total       0.92      0.92      0.92      4567
+
+
+92.2706371798
+2017-07-04 09:04:32 Confusion matrix:
+[[1659  222]
+ [ 131 2555]]
+best so far 92.2706371798 for 0.0001 and 3.0 and 0.0
+best so far 92.2706371798 for 0.0001 and 3.0 and 0.0
+2017-07-04 09:04:32 fit start
+2017-07-04 09:05:29 fit complete
+2017-07-04 09:05:35 Classification report for classifier SVC(C=3.0, cache_size=200, class_weight='balanced', coef0=0.0,
+  decision_function_shape=None, degree=3, gamma=0.0001, kernel='rbf',
+  max_iter=-1, probability=False, random_state=None, shrinking=True,
+  tol=0.001, verbose=False):
+             precision    recall  f1-score   support
+
+        0.0       0.93      0.88      0.90      1881
+        1.0       0.92      0.95      0.94      2686
+
+avg / total       0.92      0.92      0.92      4567
+
+
+92.2706371798
+2017-07-04 09:05:35 Confusion matrix:
+[[1659  222]
+ [ 131 2555]]
+best so far 92.2706371798 for 0.0001 and 3.0 and 0.0
+2017-07-04 09:05:35 fit start
+2017-07-04 09:06:32 fit complete
+2017-07-04 09:06:38 Classification report for classifier SVC(C=3.0, cache_size=200, class_weight='balanced', coef0=0.0,
+  decision_function_shape=None, degree=3, gamma=0.0001, kernel='rbf',
+  max_iter=-1, probability=False, random_state=None, shrinking=True,
+  tol=0.001, verbose=False):
+             precision    recall  f1-score   support
+
+        0.0       0.93      0.88      0.90      1881
+        1.0       0.92      0.95      0.94      2686
+
+avg / total       0.92      0.92      0.92      4567
+
+
+92.2706371798
+2017-07-04 09:06:38 Confusion matrix:
+[[1659  222]
+ [ 131 2555]]
+best so far 92.2706371798 for 0.0001 and 3.0 and 0.0
+2017-07-04 09:06:38 fit start
+2017-07-04 09:07:34 fit complete
+2017-07-04 09:07:40 Classification report for classifier SVC(C=3.0, cache_size=200, class_weight='balanced', coef0=0.0,
+  decision_function_shape=None, degree=3, gamma=0.0001, kernel='rbf',
+  max_iter=-1, probability=False, random_state=None, shrinking=True,
+  tol=0.001, verbose=False):
+             precision    recall  f1-score   support
+
+        0.0       0.93      0.88      0.90      1881
+        1.0       0.92      0.95      0.94      2686
+
+avg / total       0.92      0.92      0.92      4567
+
+
+92.2706371798
+2017-07-04 09:07:40 Confusion matrix:
+[[1659  222]
+ [ 131 2555]]
+best so far 92.2706371798 for 0.0001 and 3.0 and 0.0
+2017-07-04 09:07:40 fit start
+2017-07-04 09:08:36 fit complete
+2017-07-04 09:08:42 Classification report for classifier SVC(C=4.0, cache_size=200, class_weight='balanced', coef0=0.0,
+  decision_function_shape=None, degree=3, gamma=0.0001, kernel='rbf',
+  max_iter=-1, probability=False, random_state=None, shrinking=True,
+  tol=0.001, verbose=False):
+             precision    recall  f1-score   support
+
+        0.0       0.93      0.88      0.90      1881
+        1.0       0.92      0.95      0.94      2686
+
+avg / total       0.92      0.92      0.92      4567
+
+
+92.2706371798
+2017-07-04 09:08:42 Confusion matrix:
+[[1662  219]
+ [ 134 2552]]
+best so far 92.2706371798 for 0.0001 and 3.0 and 0.0
+2017-07-04 09:08:42 fit start
+2017-07-04 09:09:38 fit complete
+2017-07-04 09:09:44 Classification report for classifier SVC(C=4.0, cache_size=200, class_weight='balanced', coef0=0.0,
+  decision_function_shape=None, degree=3, gamma=0.0001, kernel='rbf',
+  max_iter=-1, probability=False, random_state=None, shrinking=True,
+  tol=0.001, verbose=False):
+             precision    recall  f1-score   support
+
+        0.0       0.93      0.88      0.90      1881
+        1.0       0.92      0.95      0.94      2686
+
+avg / total       0.92      0.92      0.92      4567
+
+
+92.2706371798
+2017-07-04 09:09:44 Confusion matrix:
+[[1662  219]
+ [ 134 2552]]
+best so far 92.2706371798 for 0.0001 and 3.0 and 0.0
+2017-07-04 09:09:44 fit start
+2017-07-04 09:10:40 fit complete
+2017-07-04 09:10:46 Classification report for classifier SVC(C=4.0, cache_size=200, class_weight='balanced', coef0=0.0,
+  decision_function_shape=None, degree=3, gamma=0.0001, kernel='rbf',
+  max_iter=-1, probability=False, random_state=None, shrinking=True,
+  tol=0.001, verbose=False):
+             precision    recall  f1-score   support
+
+        0.0       0.93      0.88      0.90      1881
+        1.0       0.92      0.95      0.94      2686
+
+avg / total       0.92      0.92      0.92      4567
+
+
+92.2706371798
+2017-07-04 09:10:46 Confusion matrix:
+[[1662  219]
+ [ 134 2552]]
+best so far 92.2706371798 for 0.0001 and 3.0 and 0.0
+2017-07-04 09:10:46 fit start
+2017-07-04 09:11:41 fit complete
+2017-07-04 09:11:47 Classification report for classifier SVC(C=4.0, cache_size=200, class_weight='balanced', coef0=0.0,
+  decision_function_shape=None, degree=3, gamma=0.0001, kernel='rbf',
+  max_iter=-1, probability=False, random_state=None, shrinking=True,
+  tol=0.001, verbose=False):
+             precision    recall  f1-score   support
+
+        0.0       0.93      0.88      0.90      1881
+        1.0       0.92      0.95      0.94      2686
+
+avg / total       0.92      0.92      0.92      4567
+
+
+92.2706371798
+2017-07-04 09:11:47 Confusion matrix:
+[[1662  219]
+ [ 134 2552]]
+best so far 92.2706371798 for 0.0001 and 3.0 and 0.0
+2017-07-04 09:11:47 fit start
+2017-07-04 09:12:45 fit complete
+2017-07-04 09:12:51 Classification report for classifier SVC(C=1.0, cache_size=200, class_weight='balanced', coef0=0.0,
+  decision_function_shape=None, degree=3, gamma=0.00020000000000000001,
+  kernel='rbf', max_iter=-1, probability=False, random_state=None,
+  shrinking=True, tol=0.001, verbose=False):
+             precision    recall  f1-score   support
+
+        0.0       0.93      0.88      0.90      1881
+        1.0       0.92      0.95      0.94      2686
+
+avg / total       0.92      0.92      0.92      4567
+
+
+92.3144296037
+2017-07-04 09:12:51 Confusion matrix:
+[[1654  227]
+ [ 124 2562]]
+best so far 92.3144296037 for 0.0002 and 1.0 and 0.0
+best so far 92.3144296037 for 0.0002 and 1.0 and 0.0
+2017-07-04 09:12:51 fit start
+2017-07-04 09:13:52 fit complete
+2017-07-04 09:13:58 Classification report for classifier SVC(C=1.0, cache_size=200, class_weight='balanced', coef0=0.0,
+  decision_function_shape=None, degree=3, gamma=0.00020000000000000001,
+  kernel='rbf', max_iter=-1, probability=False, random_state=None,
+  shrinking=True, tol=0.001, verbose=False):
+             precision    recall  f1-score   support
+
+        0.0       0.93      0.88      0.90      1881
+        1.0       0.92      0.95      0.94      2686
+
+avg / total       0.92      0.92      0.92      4567
+
+
+92.3144296037
+2017-07-04 09:13:58 Confusion matrix:
+[[1654  227]
+ [ 124 2562]]
+best so far 92.3144296037 for 0.0002 and 1.0 and 0.0
+2017-07-04 09:13:58 fit start

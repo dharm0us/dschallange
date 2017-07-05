@@ -31,7 +31,8 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=.5,
 # Learn to predict each class against the other
 classifier = OneVsRestClassifier(svm.SVC(kernel='linear', probability=True,
                                  random_state=random_state))
-y_score = classifier.fit(X_train, y_train).decision_function(X_test)
+#y_score = classifier.fit(X_train, y_train).decision_function(X_test)
+y_score = classifier.fit(X_train, y_train).predict_proba(X_test)
 print y_score
 
 # Compute ROC curve and ROC area for each class

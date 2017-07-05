@@ -35,13 +35,13 @@ def gt():
 def flog(msg):
     msg = str(msg)
     print(msg)
-    f = open('res_auc_submit.txt', 'a')
+    f = open('res_auc_submit_5_3_0.txt', 'a')
     f.write(msg+"\n")  # python will convert \n to os.linesep
     f.close()  # you can omit in most cases as the destructor will call it
 
 def run(tdata,tlabels,vdata):
-    g = 0.0002
-    c = 1.0
+    g = 0.0030
+    c = 3.0
     b = 0.0 
     flog(gt()+"fit start")
     if(b<1):
@@ -60,7 +60,7 @@ def run(tdata,tlabels,vdata):
     flog("scoring")
     y_score = classifier.fit(tdata, tlabels).predict_proba(vdata)
     print(y_score)
-    np.savetxt("foo.csv", y_score, delimiter=",")
+    np.savetxt("submit_0030_3_0_concat.csv", y_score, delimiter=",")
 
 
     # Compute micro-average ROC curve and ROC area
@@ -82,11 +82,17 @@ def run(tdata,tlabels,vdata):
 
 flog(gt()+"data load start")
 tdata, tlabels = load_data('Train.csv')
+vdata, vlabels = load_data('Validate.csv')
+tdata = np.concatenate((tdata, vdata), axis=0)
+tlabels = np.concatenate((tlabels, vlabels), axis=0)
+
+
 scaler = preprocessing.StandardScaler().fit(tdata)
 tdata = scaler.transform(tdata)
 
 vdata = load_test_data('TestData.csv')
 vdata = scaler.transform(vdata)
+
 print(tdata.shape)
 print(vdata.shape)
 

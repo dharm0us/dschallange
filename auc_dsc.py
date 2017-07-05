@@ -119,9 +119,11 @@ auc_val = 0
 best_g = 0
 best_c = 0
 best_b = 0
-for g in np.arange(0.0001, 0.0005, 0.0001):
-    for c in np.arange(1.0, 5.0, 1.0):
-        for b in np.arange(0.0, 4.0, 1.0):
+for g in np.arange(0.0030, 0.0050, 0.0001):
+    #for c in np.arange(1.0, 5.0, 1.0):
+        #for b in np.arange(0.0, 4.0, 1.0):
+            c = 3.0
+            b = 0.0
             curr = run(tdata,tlabels,vdata,vlabels,g,c,b)
             if(curr > auc_val):
                 auc_val = curr
